@@ -1,0 +1,11 @@
+**/Dockerfile*
+**/docker-compose.yml
+
+**/.gitignore
+**/.git/
+
+**/*.md
+**/.editorconfig
+
+**/node_modules/
+build/
