@@ -5,7 +5,7 @@ import {
   BrowserRouter,
   Switch
 } from "react-router-dom";
-import {UncontrolledAlert, NavLink } from 'reactstrap';
+import {UncontrolledAlert } from 'reactstrap';
 
 // Routes
 import Home from './Route/Home.js';

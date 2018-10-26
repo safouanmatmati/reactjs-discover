@@ -7,7 +7,7 @@ import {
 
 import {
   Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink,
-  UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, Button
+  UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
