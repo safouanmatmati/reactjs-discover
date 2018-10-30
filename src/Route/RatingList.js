@@ -23,6 +23,14 @@ type RSProps = {
 };
 
 /**
+ * CSS definition
+ * @type {Object}
+ */
+const style = {
+  cursor: 'pointer'
+}
+
+/**
  * TrRating React component
  * @extends React.Component
  */
@@ -88,7 +96,10 @@ class TrRating extends React.Component <RSProps, {allowed: ?boolean}> {
     }
 
     return (
-      <tr onClick={this.handleClick} className={(true === this.props.is_new) ? "table-success" : ''}>
+      <tr
+        onClick={this.handleClick}
+        className={(true === this.props.is_new) ? "table-success" : ''}
+        style={style}>
         <td>{this.props.identifier}</td>
         <td>{this.props.data.business}</td>
         <td>{this.props.data.score}</td>

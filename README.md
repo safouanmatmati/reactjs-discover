@@ -1,8 +1,9 @@
-# My Comments
+# My Comments, a ReactJS mini project
 
-My Comments is a mini project to test my ability to develop website from unknow technologies as ReactJS/Node.
+### Goals
+*My Comments* is a mini project to test my ability to develop website from unknow technologies as **ReactJS** / **Node**.
 
-The requested was to :
+### Expected
 * Create a local JSON/YAML storage to store ratings
 * A rating must contain a name of business / user name / comment / score (between 0 and 5)
 * A form should be shown to submit ratings
@@ -12,7 +13,7 @@ The requested was to :
 * Add a status on ratings in order to accept or reject a rating and only display the published ones
 * Add  Latitude / Longitude fields on ratings in order to display them on an embedded google map
 
-Technologies used :
+### Technologies
 * [NodeJS 10](https://nodejs.org/en/)
 * [Yarn](https://yarnpkg.com/en/) : NodeJS dependencies manager
 * [ReactJS - CRA (Create React App) module](https://github.com/facebook/create-react-app) : a Javascript application framework
@@ -26,15 +27,15 @@ Technologies used :
 Project can be run through Docker or from Node installed localy.
 
 ### Requirements
-* [Docker](https://www.docker.com/get-started)  or [NodeJS 10](https://nodejs.org/en/download/current/) with [Yarn](https://pecl.php.net/package/redis/2.2.7/windows) dependencies manager
+* [Docker](https://www.docker.com/get-started)  or [NodeJS 10](https://nodejs.org/en/download/current/) with [Yarn](https://yarnpkg.com/en/) dependencies manager
 * [Google Chrome > v.70](https://www.google.com/chrome/)
 
 ### Step
 First, open a terminal
 
 ```
-git clone https://github.com/safouanmatmati/reactjs-discover.git
-cd reactjs-discover/
+git clone https://github.com/safouanmatmati/reactjs-experiment.git
+cd reactjs-experiment/
 ```
 #### from Docker
 ```
