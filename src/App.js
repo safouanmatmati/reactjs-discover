@@ -36,12 +36,28 @@ type States = {
 }
 
 export default class App extends React.Component <{}, States> {
+  /**
+   * Routes.
+   * @type {{Route}}
+   */
   routes: {[route_name: string]: Route};
 
+  /**
+   * A rating manager.
+   * @type {RatingManager}
+   */
   ratingManager: RatingManager;
 
+  /**
+   * A2HS helper (Add to home screen class)
+   * @type {A2HS}
+   */
   pwa_aths: A2HS
 
+  /**
+   * Constructor.
+   * @param {Object} props
+   */
   constructor(props: {}) {
     super(props);
 
@@ -98,11 +114,16 @@ export default class App extends React.Component <{}, States> {
     this.saveStateToLocalStorage();
   }
 
+  /**
+   * Save ratings in local storage.
+   */
   saveStateToLocalStorage = () => {
     localStorage.setItem('ratings', JSON.stringify(this.ratingManager.getAll()));
   }
 
-  // Defines mapping between location and components
+  /**
+   * Defines mapping between location and components       [description]
+   */
   defineRoutes = (): void => {
     this.routes = {
       home:      <Route key="home" exact path="/" component={Home}/>,
@@ -115,6 +136,10 @@ export default class App extends React.Component <{}, States> {
     };
   }
 
+  /**
+   * Refresh statistics.
+   * @param {boolean|null}
+   */
   refreshStats = (identifier?: string): void => {
     this.setState({
       last_rating_added_id: identifier,
@@ -122,11 +147,14 @@ export default class App extends React.Component <{}, States> {
     });
   }
 
+  /**
+   * PWA installable event handler
+   */
   handlePwaInstallable = ():void => {
-    let alert = <div class="fixed-bottom">
+    let alert = <div className="fixed-bottom">
       <UncontrolledAlert className="mb-0" color="info" fade={false}>
         <p className="mb-0">
-          <button type="button" onClick={(e)=>{e.preventDefault(); this.promptPwaInstallation();}} class="btn btn-link">
+          <button type="button" onClick={(e)=>{e.preventDefault(); this.promptPwaInstallation();}} className="btn btn-link">
             Add to home screen
           </button>
           <span className="align-middle">to a greater experience.</span>
@@ -137,6 +165,9 @@ export default class App extends React.Component <{}, States> {
     this.setState({alert: alert});
   }
 
+  /**
+   * PWA installed event handler
+   */
   handlePwaInstalled = ():void => {
     const alert =
       <div class="fixed-bottom">
@@ -148,12 +179,20 @@ export default class App extends React.Component <{}, States> {
     this.setState({alert: alert});
   }
 
+  /**
+   * Prompt PWA installation
+   */
   promptPwaInstallation = ():void => {
     this.pwa_aths.promptInstall().then((accepted: boolean) => {
       console.log(accepted);
     });
   }
 
+  /**
+   * Render component.
+   *
+   * @return {React.Node}
+   */
   render = (): React.Node => {
     return (
       <BrowserRouter>

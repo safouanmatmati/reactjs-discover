@@ -2,17 +2,17 @@ version:          '3.7'
 
 services:
   my-comments:
-    image:        ${BASE_REPO_NAME}/my-comments
+    image:        ${DOCKER_TAG_BASE_NAME}/my-comments
     build:
       context:    ./
       cache_from:
-        - ${BASE_REPO_NAME}/my-comments
+        - ${DOCKER_TAG_BASE_NAME}/my-comments
     volumes:
-      - '.:/usr/src/app'
+      - '.:/srv/app'
       # Persist node modules
-      - '/usr/src/app/node_modules'
+      - '/srv/app/node_modules'
     ports:
-      - '3000:3000'
+      - "3000:3000"
     environment:
       ## Used to allow auto page reload after editing a file (depends on volume too)
       - CHOKIDAR_USEPOLLING=true
